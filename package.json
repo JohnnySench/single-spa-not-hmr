@@ -1,0 +1,20 @@
+{
+  "name": "single-spa",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/systemjs": "^6.15.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "single-spa": "^6.0.3",
+    "single-spa-layout": "^3.0.0"
+  }
+}

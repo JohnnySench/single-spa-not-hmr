@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@mf/app-vue": "http://localhost:3001/app-vue.js",
+    "@mf/app-vue2": "http://localhost:3002/app-vue2.js"
+  }
+}
