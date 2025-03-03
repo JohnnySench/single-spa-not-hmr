@@ -20,11 +20,11 @@ microfrontend: front1-start front2-start root-config-start
 
 front1-start:
 	@echo "Starting app-vue..."
-	cd $(FRONT_1) && npm run watch
+	cd $(FRONT_1) && npm run dev
 
 front2-start:
 	@echo "Starting app-vue2..."
-	cd $(FRONT_2) && npm run watch
+	cd $(FRONT_2) && npm run dev
 
 root-config-start:
 	@echo "Starting root..."
