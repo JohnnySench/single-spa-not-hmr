@@ -10,11 +10,7 @@ const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
     routes,
     loadApp(app) {
-        if (import.meta.env.MODE === "development") {
-            return import(app.name /* @vite-ignore */);
-        }
-        return System.import(app.name);
-
+        return import(app.name /* @vite-ignore */);
     },
 });
 const layoutEngine = constructLayoutEngine({ routes, applications });

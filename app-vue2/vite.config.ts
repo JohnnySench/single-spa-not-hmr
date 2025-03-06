@@ -11,8 +11,12 @@ export default defineConfig({
       input: resolve(__dirname, "./src/main.ts"),
       output: {
         entryFileNames: 'app-vue2.js',
-        format: 'system',
+        format: 'es',
+        globals: {
+          "Vue": "vue"
+        }
       },
+      external: ["vue"],
       preserveEntrySignatures: 'strict',
     },
   },

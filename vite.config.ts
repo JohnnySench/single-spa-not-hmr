@@ -33,8 +33,18 @@ export default defineConfig(({command}) => {
             simpleHtmlPlugin({
                 inject: {
                     data: {
-                        title: 'App',
-                        injectScript: `<script type="systemjs-importmap" src="./importmap.json"></script>`,
+                        injectScript: `
+                              <script type="importmap">
+                                {
+                                  "imports": {
+                                    "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.prod.js",
+                                    "@mf/app-vue": "http://localhost:3001/app-vue.js",
+                                    "@mf/app-vue2": "http://localhost:3002/app-vue2.js"
+                                  }
+                                }
+                              </script>
+                            `,
+                        title: 'Build',
                     }
                 }
             })
