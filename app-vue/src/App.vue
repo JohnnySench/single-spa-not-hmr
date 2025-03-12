@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import {onMounted, onUnmounted} from "vue";
+import {useRouter} from "vue-router";
+const props = defineProps<{word: string}>();
 
 onMounted(() => {
   console.log('micro 1 mounted')
@@ -8,23 +10,24 @@ onMounted(() => {
 onUnmounted(() => {
   console.log('micro 1 unmounted')
 })
+
+const router = useRouter();
 </script>
 
 <template>
-  <h1>Hello from micro !!!21312</h1>
+  <div>{{word}}</div>
+  <h1>Micro 1</h1>
+  <div class="buttons">
+    <button @click="router.push({name: 'bar'})">Bar View</button>
+    <button @click="router.push({name: 'foo'})">Foo View</button>
+  </div>
+  <RouterView />
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 </style>
